@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h4 class="mb-3">Add Expense</h4>
+
+<form method="post" class="card p-4 shadow-sm">
+    {% csrf_token %}
+
+    <div class="mb-3">
+        <label class="form-label">Expense Title</label>
+        <input
+            type="text"
+            name="title"
+            class="form-control"
+            placeholder="e.g. Food, Travel, Rent"
+            required
+        >
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Amount</label>
+        <input
+            type="number"
+            name="amount"
+            class="form-control"
+            placeholder="Enter amount"
+            required
+        >
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Category</label>
+        <input
+            type="text"
+            name="category"
+            class="form-control"
+            placeholder="e.g. Daily, Monthly"
+            required
+        >
+    </div>
+
+    <button type="submit" class="btn btn-danger">
+        Save Expense
+    </button>
+</form>
+{% endblock %}
